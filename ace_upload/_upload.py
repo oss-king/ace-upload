@@ -179,7 +179,6 @@ def upload_():
 
         secret = input("Enter password: ").strip()
         try:
-            old_time =time.time()
             client = connectMinIO(endpoint, key, secret)
 
             f_initial =  input('First initial:').strip().lower()
@@ -190,6 +189,7 @@ def upload_():
             minio_path = input('Name of cloud directory:').lower()
             print('\n')
             #uploading all of the documents
+            old_time =time.time()
             upload_local_directory_to_minio(client,filepath, bucket_name, minio_path)
             
             time.sleep(2)
@@ -198,7 +198,7 @@ def upload_():
             print(total_size + ' uploaded')
             new_time=time.time()
             time_delta = new_time - old_time
-            print(f'Time Elapsed: {round(time_delta,3)}s')
+            print(f'Time Elapsed: {round(time_delta,1)}s')
 
             bucket_loc = f"{connect_to}/minio/{bucket_name}/{minio_path}/"
             print(f"\nLocation: {bucket_loc}\n")

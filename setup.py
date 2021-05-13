@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="ace_upload",
-    version="1.5.0",
+    version="1.5.1",
     description="For uploading documents to brewlytics MinIO",
     long_description=README,
     long_description_content_type="text/markdown",
