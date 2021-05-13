@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="ace_upload",
-    version="1.4.0",
+    version="1.5.0",
     description="For uploading documents to brewlytics MinIO",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -25,7 +25,7 @@ setup(
     ],
     packages=find_packages(exclude=("tests",)),
     include_package_data=True,
-    install_requires=["minio","urllib3","requests","glob2"],
+    install_requires=["minio","urllib3","requests","glob2","numpy"], #dependencies
     entry_points={
         "console_scripts": [
             "ace_upload=ace_upload.__main__:main",
